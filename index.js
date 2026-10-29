@@ -28,7 +28,11 @@ const INVENTORY = [
  */
 function getIds(items) {
   // TODO
+  return items.map((item) => item.id);
 }
+
+// test
+// console.log(getIds(INVENTORY));
 
 /**
  * @param {Item[]} items
@@ -36,7 +40,11 @@ function getIds(items) {
  */
 function getCategories(items) {
   // TODO
+  return items.map((item) => item.category);
 }
+
+// test
+// console.log(getCategories(INVENTORY));
 
 /**
  * Vendors often use SKUs (Stock Keeping Units) to manage their inventory.
@@ -49,7 +57,13 @@ function getCategories(items) {
  */
 function getSkus(items) {
   // TODO
+  return items.map(
+    (item) => item.id + "#" + item.name + "#" + item.name.length,
+  );
 }
+
+// test
+// console.log(getSkus(INVENTORY));
 
 /**
  * @param {Item[]} items
