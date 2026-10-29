@@ -71,7 +71,11 @@ function getSkus(items) {
  */
 function getFruits(items) {
   // TODO
+  return items.filter((item) => item.category === "fruit");
 }
+
+// test
+// console.log(getFruits(INVENTORY));
 
 /**
  * @param {Item[]} items
@@ -80,7 +84,11 @@ function getFruits(items) {
  */
 function getItemsByCategory(items, category) {
   // TODO
+  return items.filter((item) => item.category === category);
 }
+
+// test
+// console.log(getItemsByCategory(INVENTORY, "vegetable"));
 
 /**
  * An item is considered "cheap" if its price is $2.50 or less.
@@ -89,7 +97,11 @@ function getItemsByCategory(items, category) {
  */
 function getCheapItems(items) {
   // TODO
+  return items.filter((item) => item.price <= 2.5);
 }
+
+// test
+// console.log(getCheapItems(INVENTORY));
 
 /**
  * @param {Item[]} items
@@ -97,7 +109,11 @@ function getCheapItems(items) {
  */
 function countItems(items) {
   // TODO
+  return items.reduce((total, item) => total + item.quantity, 0);
 }
+
+// test
+// console.log(countItems(INVENTORY));
 
 /**
  * @param {Item[]} items
@@ -105,7 +121,11 @@ function countItems(items) {
  */
 function getTotalCost(items) {
   // TODO
+  return items.reduce((total, item) => total + item.price, 0);
 }
+
+// test
+// console.log(getTotalCost(INVENTORY));
 
 /**
  * @param {Item[]} items
@@ -113,4 +133,10 @@ function getTotalCost(items) {
  */
 function getMostExpensiveItem(items) {
   // TODO
+  return items.reduce((mostExpensive, item) =>
+    item.price > mostExpensive.price ? item : mostExpensive,
+  );
 }
+
+// test
+// console.log(getMostExpensiveItem(INVENTORY));
